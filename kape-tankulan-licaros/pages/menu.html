@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kape Tankulan ni licaros Menu</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <h1>Kape Tankulan ni licaros Menu</h1>
+
+ <p class="note">
+        Note: you can click the items to preview the
+    <h2>Coffee</h2>
+    <ul>
+      
+        <li id="best-seller" data-image="../images/yum.jpg">Creamy hot coffee (yum) - ₱120 (Best Seller)</li>
+        <li data-image="../images/best.jpg">Coffe float - ₱100</li>
+        <li data-image="../images/pack.jpg">Creamy kape pack - ₱15</li>
+    </ul>
+
+
+    <h2>Snacks</h2>
+    <ul>
+        <li data-image="../images/bread.webp">Toasted Bread - ₱30</li>
+        <li data-image="../images/cookie.webp">Chocolate Cookie - ₱45</li>
+    </ul>
+
+   
+        <strong>Item Preview:</strong>
+        <img id="menu-display" src="../images/yum.jpg" alt="Select an item to view its picture">
+    </div>
+
+    <p class="note">
+        Note: Prices are in Philippine pesos and may change without prior notice.
+    </p>
+
+    <a href="../index.html">Back to Home</a>
+
+  
+    <script>
+     
+        const menuItems = document.querySelectorAll('ul li');
+      
+        const displayImage = document.getElementById('menu-display');
+
+       
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+            
+                const imagePath = item.getAttribute('data-image');
+                
+               
+                displayImage.src = imagePath;
+                displayImage.alt = item.textContent;
+            });
+        });
+    </script>
+
+</body>
+</html>
+
